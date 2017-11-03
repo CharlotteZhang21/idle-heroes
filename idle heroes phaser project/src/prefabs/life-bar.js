@@ -38,6 +38,9 @@ class LifeBar extends Phaser.Group{
 		var barBg = this.game.add.sprite(0,0,'bar-bg');
 		this.add(barBg);
 
+		console.log("!!!! bg.width: " + barBg.scale.x);
+
+
 
 		var barFill = 'bar-fill';
 		if(enemy){
@@ -77,28 +80,21 @@ class LifeBar extends Phaser.Group{
 
 		var scaleTween = this.game.add.tween(this.barFilling.scale).to(
 			{x:this.fullWidthFilling * (this.amount/100)}, 300, Phaser.Easing.Quadratic.InOut, true, 0);
-		// var delay = Math.random() * 500;
-		// this.game.time.events.add(delay, function() {
-		// 	// this.cta.playTrail();
-		// 	var bloodAnim = CustomPngSequencesRenderer.playPngSequence(this.game, PiecSettings.pngAnimations[0], this);
-		// 	bloodAnim.anchor.set(0.5);
-		// 	bloodAnim.scale.x = (this.initialWidth/5) / bloodAnim.width;
-		// 	bloodAnim.scale.y = bloodAnim.scale.x;
-		// 	bloodAnim.x = this.initialWidth * window.devicePixelRatio / 100 * (Math.random() * 100) * 0.2;
-		// }, this);
+		
 	}
 
-	increaseLifeBar(value) {
+	increaseLifeBar(value, duration) {
 
 		console.log("increase: " + value);
-		if (this.amount < 100)
-			this.amount += value;
-		else
-			this.amount = 0;
+		this.amount += value;
+		this.amount = this.amount < 100 ? this.amount: 100;
 
-		console.log("now amout is: " + this.amout);
+		var d = duration ? duration : 300;
+
 		var scaleTween = this.game.add.tween(this.barFilling.scale).to(
-			{x:this.fullWidthFilling * (this.amount/100)}, 300, Phaser.Easing.Quadratic.InOut, true, 0);
+			{x:this.fullWidthFilling * (this.amount/100)}, d, Phaser.Easing.Quadratic.InOut, true, 0);
+
+		
 	}
 
 	decreaseLifeBarWithDelay(value, delay) {

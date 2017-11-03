@@ -14,6 +14,8 @@ class Victory extends Phaser.Group {
 		var containerX = container.getBoundingClientRect().left * window.devicePixelRatio;
 		var containerY = container.getBoundingClientRect().top * window.devicePixelRatio;
 
+		var tryAgain = document.getElementById("tryAgain");
+
 		var winMessage;
 		if(!lose) {
 			winMessage = this.game.add.sprite(0, 0, "win-message");
@@ -22,6 +24,12 @@ class Victory extends Phaser.Group {
 		}else {
 			winMessage = this.game.add.sprite(0, 0, "lose-message");
 
+			this.game.time.events.add(2000, function(){
+
+				tryAgain.classList += " show";
+
+			}, this);
+			
 			console.log("lose");
 		} 
 		
@@ -46,25 +54,6 @@ class Victory extends Phaser.Group {
 		}, this);
 
 	}
-
-	// createElena() {
-
-	// 	var container = document.getElementById("elena");
-	// 	var containerWidth = container.offsetWidth * window.devicePixelRatio;
-	// 	var containerHeight = container.offsetHeight * window.devicePixelRatio;
-	// 	var containerX = container.getBoundingClientRect().left * window.devicePixelRatio;
-	// 	var containerY = container.getBoundingClientRect().top * window.devicePixelRatio;
-
-	// 	var gingerbread = this.game.add.sprite(0,0,'elena');
-	// 	gingerbread.x = containerX;
-	// 	gingerbread.y = containerY;
-	// 	gingerbread.scale.x = containerWidth / gingerbread.width;
-	// 	gingerbread.scale.y = gingerbread.scale.x;
-
-	// 	this.gingerbread = gingerbread;
-	// 	this.gingerbread.alpha = 0;
-
-	// }
 
 	animate() {
 		this.gingerbread.alpha = 1;

@@ -142,6 +142,12 @@ import * as CustomPngSequencesRenderer from '../utils/custom-png-sequences-rende
 
      onInteractionComplete() {
 
+        if(this.game.global.restarted){
+
+            this.lose = false;
+            this.game.global.restarted = false;
+        }
+
         var delay = 1000;
 
         var noInteractionDelay = 3000;
@@ -162,7 +168,7 @@ import * as CustomPngSequencesRenderer from '../utils/custom-png-sequences-rende
 
                 if(!this.isEnemy(interaction.from)){
                     // only shows when it's the characters' turn
-                    this.battleButton.showWithCharacter(interaction.from);
+                    this.battleButton.showWithCharacter(interaction.from, PiecSettings.autoPlay.activateAfter);
                     this.darkOverlay.showDuringBattle();
                 
                 }else{
@@ -187,7 +193,7 @@ import * as CustomPngSequencesRenderer from '../utils/custom-png-sequences-rende
                         }else{
                             // if(!interac)
                             this.timer = this.game.time.events.add(PiecSettings.autoPlay.activateAfter, function() {
-                                console.log("enemyAttack");
+
                                 this.lose = true;
                                 if (this.game.global.readyToInteract) {
                                     this.enemyAttack();

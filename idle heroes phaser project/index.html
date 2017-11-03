@@ -76,6 +76,8 @@
     </div>
     <div class="layout-item" id="cta-container-final-2">
     </div>
+
+    <a class="try-again" id="tryAgain" onclick="restartLevel()">Try Again</a>
     
     <!-- IEC Creative ends here -->
     <!-- phaser requires fonts to be preloaded before they can be used "in game" -->
@@ -139,6 +141,15 @@
             PiecSettings.numberOfInteractions = 0;
         }
     };
+
+    function restartLevel() {
+
+        piec.restartLevel();
+
+        document.getElementById("tryAgain").classList.remove("show");
+
+       
+    }
     </script>
 </body>
 

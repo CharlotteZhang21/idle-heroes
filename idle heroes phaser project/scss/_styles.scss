@@ -144,6 +144,27 @@ a {
     top: 40%;
 }
 
+.try-again {
+    position: absolute;
+    // width: 80%;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events:none;
+    font-family: Contemporary;
+    font-size: 4vmin;
+    color: #FFE78A;
+    border-bottom: 1px solid #FFE78A;
+    padding-bottom: 3px;
+    z-index: 999;
+}
+
+#tryAgain.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
 
 /* Debug mode settings for PIEC containers ---------------------------------------------------*/
 .debug {

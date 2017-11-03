@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Vungle Endcard</title>
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="main.css">
     <style>
     @font-face {
         font-family: "vungle-fonticon";
@@ -21,6 +21,10 @@
        font-style: normal;
     }
     </style>
+
+    <!-- logo strike start -->
+    <style>#vungle-footer {display: none !important; }</style>
+    <!-- logo strike end -->
 </head>
 
 <body class="preload">
@@ -68,6 +72,8 @@
     </div>
     <div class="layout-item" id="cta-container-final-2">
     </div>
+
+    <a class="try-again" id="tryAgain" onclick="restartLevel()">Try Again</a>
     
     <!-- IEC Creative ends here -->
     <!-- phaser requires fonts to be preloaded before they can be used "in game" -->
@@ -117,6 +123,15 @@
             PiecSettings.numberOfInteractions = 0;
         }
     };
+
+    function restartLevel() {
+
+        piec.restartLevel();
+
+        document.getElementById("tryAgain").classList.remove("show");
+
+       
+    }
     </script>
 </body>
 

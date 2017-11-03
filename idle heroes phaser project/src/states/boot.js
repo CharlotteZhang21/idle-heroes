@@ -52,6 +52,28 @@ class Boot extends Phaser.State {
 
         }
 
+        piec.restartLevel = function() {
+
+                // game.state.start(game.state.current);
+
+
+                game.state.start('endcard');
+
+                game.global.restarted = true;
+
+                piec.unlockGame();
+
+                game.global.interaction = 0;
+
+                game.global.isComplete = false;
+
+
+                // PiecSettings.onGoldUpdate(game.global.gold);
+
+                // game.onGoldUpdated.dispatch(game);
+
+            };
+
         // stretch game to fit window
         window.onresize = function() {
 

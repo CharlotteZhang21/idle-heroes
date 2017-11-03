@@ -14,8 +14,19 @@ class Logo extends Phaser.Group {
 		// this.logo.x = containerX + this.logo.width / 2;
 		// this.logo.y = containerY + this.logo.height /2;
 		this.add(this.logo);
-		this.initialLogoWidth = this.logo.width/1.5;
-		this.initialLogoHeight = this.logo.height/1.5;
+		if (this.game.global.windowHeight < this.game.global.windowWidth) {
+			//landscape
+			
+			this.initialLogoWidth = this.logo.width;
+			this.initialLogoHeight = this.logo.height;
+
+		} else {
+			//portrait
+			
+			this.initialLogoWidth = this.logo.width/1.5;
+			this.initialLogoHeight = this.logo.height/1.5;
+		}
+		
 		this.logo.scale.x = containerWidth / this.initialLogoWidth;
 		this.initialLogoScale = this.logo.scale.x;
 		this.logo.scale.y = this.logo.scale.x;
