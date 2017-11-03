@@ -20,7 +20,6 @@ class Victory extends Phaser.Group {
 		if(!lose) {
 			winMessage = this.game.add.sprite(0, 0, "win-message");
 
-			console.log("won");
 		}else {
 			winMessage = this.game.add.sprite(0, 0, "lose-message");
 
@@ -48,9 +47,8 @@ class Victory extends Phaser.Group {
 			700, Phaser.Easing.Back.Out, true, 0);
 		this.game.time.events.add(1100, function() {
 			this.game.add.tween(winMessage).to({y: window.innerHeight * window.devicePixelRatio + winMessage.height}, 700, Phaser.Easing.Linear.InOut, true, 0);
-			// var scaleTween2 = this.game.add.tween(winMessage.scale).to({x: finalScale * 2, y: finalScale * 2},
-			// 700, Phaser.Easing.Back.In, true, 0);
-			// var alphaTween = this.game.add.tween(winMessage).to({alpha: 0}, 500, Phaser.Easing.Linear.None, true, 0);
+			
+			
 		}, this);
 
 	}

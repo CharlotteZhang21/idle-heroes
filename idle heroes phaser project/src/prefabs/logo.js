@@ -11,8 +11,6 @@ class Logo extends Phaser.Group {
 
 		this.logo = this.game.add.sprite(0, 0, 'logo');
 		this.logo.anchor.set(0.5, 0.5);
-		// this.logo.x = containerX + this.logo.width / 2;
-		// this.logo.y = containerY + this.logo.height /2;
 		this.add(this.logo);
 		if (this.game.global.windowHeight < this.game.global.windowWidth) {
 			//landscape
@@ -33,9 +31,6 @@ class Logo extends Phaser.Group {
 		this.logo.x = containerX + this.logo.width/2;
 		this.logo.y = containerY + this.logo.height/2;
 		this.alpha = 1;
-		// if (window.innerHeight > window.innerWidth) {
-		// 	this.alpha = 0;
-		// }
 
 	}
 

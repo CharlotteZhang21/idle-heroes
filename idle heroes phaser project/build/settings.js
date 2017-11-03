@@ -344,8 +344,8 @@ PiecSettings.pngAnimations = [
     },
     {//13
         src: 'girl_dead.png',
-        spriteWidth: 1912/4,
-        spriteHeight: 1482/3,
+        spriteWidth: 1000/5,
+        spriteHeight: 436/2,
         spriteNumber: 10,
         loops: 1,
         delay: 0,
@@ -355,8 +355,8 @@ PiecSettings.pngAnimations = [
     },
     {//14
         src: 'knight_dead.png',
-        spriteWidth: 1632/3,
-        spriteHeight: 1764/4,
+        spriteWidth: 1000/5,
+        spriteHeight: 324/2,
         spriteNumber: 10,
         loops: 1,
         delay: 0,

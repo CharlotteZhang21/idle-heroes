@@ -59,7 +59,7 @@ class DarkOverlay extends Phaser.Group {
 
 	hideDuringBattle() {
 		if (this.alpha > 0)
-			var tween = this.game.add.tween(this).to({alpha: 0}, 100, Phaser.Easing.Quadratic.In, true, 0);
+			var tween = this.game.add.tween(this).to({alpha: 0}, 800, Phaser.Easing.Quadratic.In, true, 0);
 	}
 }
 

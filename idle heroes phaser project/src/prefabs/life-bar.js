@@ -21,15 +21,16 @@ class LifeBar extends Phaser.Group{
 		this.add(icon);
 		if(iconName != "girl-portrait"){
 			icon.anchor.set(0.5);
-			icon.x = (-1) * icon.width/2 * 1.2;
+			icon.x = (-1) * icon.width/2 * 1.5;
 			icon.y = this.initialHeight/2;
 			icon.scale.y = this.initialHeight / icon.height * 1.5;
-			icon.scale.x = icon.scale.y;
+			icon.scale.x = icon.scale.y ;
 		}else{
-			icon.x = (-1) * icon.width/2 * 1.5;
+			//girl
+			icon.x = (-1) * icon.width/2 * 1.3;
 			icon.y = this.initialHeight/2 - 150;
 			icon.scale.y = this.initialHeight / icon.height * 5;
-			icon.scale.x = icon.scale.y ;
+			icon.scale.x = icon.scale.y * 0.8;
 		}
 		
 	}
@@ -37,10 +38,6 @@ class LifeBar extends Phaser.Group{
 	createLifeBar(enemy, amount) {
 		var barBg = this.game.add.sprite(0,0,'bar-bg');
 		this.add(barBg);
-
-		console.log("!!!! bg.width: " + barBg.scale.x);
-
-
 
 		var barFill = 'bar-fill';
 		if(enemy){

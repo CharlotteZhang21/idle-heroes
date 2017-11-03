@@ -68,18 +68,6 @@ import * as CustomPngSequencesRenderer from '../utils/custom-png-sequences-rende
         this.battleButton = new BattleButton(this.game);
         this.game.add.existing(this.battleButton);
 
-        // if (PiecSettings.autoPlay != null) {
-        //     if (PiecSettings.autoPlay.activateAfter != null) {
-        //         this.game.time.events.add(PiecSettings.autoPlay.activateAfter, function() {
-        //             console.log("here");
-        //             if (!this.game.global.userInteractedWithIEC) {
-        //                 this.game.onInteract.dispatch();
-        //             }
-        //         }, this);
-        //     } else {
-        //         this.game.onSpin.dispatch();
-        //     }
-        // }
 
         if (PiecSettings.closeButtonTimer == null || PiecSettings.closeButtonTimer == false) {
             document.getElementById("vungle-close").className = "show visible";
