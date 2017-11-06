@@ -3,8 +3,8 @@
  import Preloader from './states/preloader';
 
  const game = new Phaser.Game(
-     document.body.scrollWidth * window.devicePixelRatio,
-     document.body.scrollHeight * window.devicePixelRatio,
+     document.body.clientWidth * window.devicePixelRatio,
+     document.body.clientHeight * window.devicePixelRatio,
      Phaser.CANVAS,
      'game',
      null,

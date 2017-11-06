@@ -20,8 +20,8 @@ import * as CustomPngSequencesRenderer from '../utils/custom-png-sequences-rende
         this.game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
         this.game.scale.setUserScale((1 / window.devicePixelRatio), (1 / window.devicePixelRatio), 0, 0);
 
-        this.game.global.windowHeight = document.body.scrollHeight;
-        this.game.global.windowWidth = document.body.scrollWidth;
+        this.game.global.windowHeight = document.body.clientHeight;
+        this.game.global.windowWidth = document.body.clientWidth;
 
         this.camera = new Camera(this.game);
         this.camera.setZoom(1.2);

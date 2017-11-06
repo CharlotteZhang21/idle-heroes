@@ -26,7 +26,7 @@ export function rndRgba(alpha) {
 // boolean screen orientation
 export function isPortrait() {
 
-    return document.body.scrollHeight > document.body.scrollWidth;
+    return document.body.clientHeight > document.body.clientWidth;
 }
 
 
